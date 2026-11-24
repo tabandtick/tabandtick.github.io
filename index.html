@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MyTo.Do | Google Tasks To-do List Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MyTo.Do" />
+    <meta name="author" content="MyTo.Do" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div id="nav">
+      <div style="width:100%;"></div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-2">
+            <a class="navbar-link" href="/">MyTo.Do</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-5 col-md-offset-1">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="/" target="_blank">
+              <img src="img/logo.png" style="width:150px" />
+            </a>
+          </div>
+          <h1 style="text-align:center">
+            A simple and intuitive way to manage your tasks.
+          </h1>
+          <br />
+          <h1 style="text-align:center">
+            Collaborate with others by sharing your tasks and task lists.
+          </h1>
+          <br />
+          <h1 style="text-align:center">
+            Get more done whilst keeping your tasks in sync with<br />Gmail,
+            Google Calendar and Google Tasks.
+          </h1>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="row">
+          <div id="sign-up" class="text-center">
+            <br /><br />
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <h1>
+                  Sign up now to get early access to the app
+                </h1>
+              </div>
+            </div>
+            <br />
+
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                  <div class="col-md-12">
+                    <form
+                      id="form"
+                      method="POST"
+                      action="https://script.google.com/macros/s/AKfycbywnEJJCwNFp6bxtkLTGIXoRYgtB18U5fla-a8VBsTvsM2oEWI/exec"
+                    >
+                      <div>
+                        <label for="firstname"></label>
+                        <input
+                          class="contact-box"
+                          id="firstname"
+                          name="firstname"
+                          placeholder="First Name"
+                        />
+                      </div>
+
+                      <div>
+                        <label for="lastname"></label>
+                        <input
+                          class="contact-box"
+                          id="lastname"
+                          name="lastname"
+                          placeholder="Last Name"
+                        />
+                      </div>
+
+                      <div>
+                        <label for="email"></label>
+                        <input
+                          class="contact-box"
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          placeholder="Email"
+                        />
+                      </div>
+                      <div>
+                        <button id="submit">
+                          Submit <i class="fa fa-check fa-fw fa-1x"></i>
+                        </button>
+                      </div>
+                      <br /><br />
+                    </form>
+
+                    <div style="display:none" id="thankyou_message">
+                      <br /><br /><br />
+                      <p>
+                        Your email has been submitted. We'll reach out to you as
+                        soon as we've launched
+                      </p>
+                      <i
+                        style="color:#3cba54"
+                        class="fa fa-check fa-fw fa-3x"
+                      ></i>
+                      <br /><br /><br /><br /><br />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <br />
+    <div id="summary">
+      <div class="row partners">
+        <div class="col-md-2 col-md-offset-3">
+          <img src="img/gmail.png" style="width:75px" />
+        </div>
+        <div class="col-md-2">
+          <img src="img/calendar.png" style="width:75px" />
+        </div>
+        <div class="col-md-2">
+          <img src="img/tasks.png" style="width:75px" />
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+
+    <section class="footer">
+      <div class="container" style="width:100%;top-margin:0px;">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                <div>
+                  <!-- <ul class="list-inline">
+                                  <li>
+                                      <a href="https://facebook.com/MyTo.Do" target="_blank"><i id="socialmedia" class="fa fa-facebook fa-fw fa-2x"></i></a>
+                                  </li>
+                                  <li>
+                                      <a href="https://twitter.com/MyToDo" target="_blank"><i id="socialmedia" class="fa fa-twitter fa-fw fa-2x"></i></a>
+                                  </li>
+                                  <li>
+                                      <a href="https://instagram.com/MyTo.Do" target="_blank"><i id="socialmedia" class="fa fa-instagram fa-fw fa-2x"></i></a>
+                                  </li>
+                              </ul> -->
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr class="star-primary" />
+            <br />
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                <h2 class="text-muted">Copyright © 2020 MyTo.Do</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script> -->
+    <script src="google_form_handler.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+      //scrolling actions of the navbar buttons
+      $(".navbar-link").click(function(e) {
+        e.preventDefault();
+        var scrollto = $(this).attr("href");
+        $("html, body").animate(
+          {
+            scrollTop: $(scrollto).offset().top
+          },
+          1500
+        );
+      });
+    </script>
+  </body>
+</html>
