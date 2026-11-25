@@ -1,0 +1,110 @@
+:root {
+  --page: #f4f1ec;
+  --text: #26222e;
+  --muted: #6b6475;
+  --line: #ddd6e8;
+  --accent: #6d4bd8;
+  --on-accent: #fff;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #16131c;
+    --text: #eeeaf4;
+    --muted: #a79fb5;
+    --line: #3d364a;
+    --accent: #a48bf5;
+    --on-accent: #16131c;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font: 17px/1.5 "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 6vh 20px 40px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 19px;
+  text-wrap: balance;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.shot {
+  width: 100%;
+  height: auto;
+  margin: 32px 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+li {
+  color: var(--muted);
+}
+
+strong {
+  color: var(--text);
+}
+
+footer {
+  padding: 24px 20px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+footer a {
+  color: inherit;
+}
