@@ -108,3 +108,40 @@ footer {
 footer a {
   color: inherit;
 }
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.text {
+  max-width: 680px;
+  text-align: left;
+}
+
+.text h2 {
+  margin: 28px 0 6px;
+  font-size: 20px;
+}
+
+.text p {
+  margin: 0 0 12px;
+}
+
+.text a {
+  color: var(--accent);
+}
+
+.text .plain {
+  display: block;
+  margin: 0 0 12px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.text li {
+  color: inherit;
+}
