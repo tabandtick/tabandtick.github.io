@@ -85,7 +85,22 @@ h1 {
   outline-offset: 3px;
 }
 
+.demo .dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .demo .light {
+    display: none;
+  }
+
+  .demo .dark {
+    display: block;
+  }
+}
+
 .shot {
+  display: block;
   width: 100%;
   height: auto;
   margin: 32px 0;
@@ -109,6 +124,50 @@ li {
 
 strong {
   color: var(--text);
+}
+
+.keys {
+  max-width: 560px;
+  margin: 56px auto 0;
+}
+
+.keys h2 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.keys dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 20px;
+  margin: 0;
+  text-align: left;
+}
+
+.keys dt {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.keys dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.keys p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 26px;
+  padding: 1px 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 14px;
+  text-align: center;
 }
 
 footer {
