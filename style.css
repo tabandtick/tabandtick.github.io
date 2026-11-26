@@ -126,6 +126,15 @@ strong {
   color: var(--text);
 }
 
+.tour {
+  margin: -16px 0 32px;
+  font-size: 15px;
+}
+
+.tour a {
+  color: var(--accent);
+}
+
 .keys {
   max-width: 560px;
   margin: 56px auto 0;
