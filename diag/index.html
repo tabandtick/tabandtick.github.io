@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>T&amp;T test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="T&amp;T test">
+  <meta name="robots" content="noindex">
+  <style>
+    body { margin: 0; background: #1b1b1b; color: #fff; font: 13px -apple-system, sans-serif; }
+    /* A band every 10px from the very top, each labelled with where it starts */
+    .band { position: absolute; left: 0; right: 0; height: 10px; font-size: 9px; line-height: 10px; padding-left: 4px; }
+    #safe { position: absolute; top: 0; left: 0; width: 100%; height: env(safe-area-inset-top); border-bottom: 2px solid #0f0; box-sizing: border-box; }
+    #info { position: absolute; top: 220px; left: 16px; right: 16px; font: 15px/1.5 ui-monospace, monospace; }
+  </style>
+</head>
+<body>
+  <div id="bands"></div>
+  <div id="safe"></div>
+  <div id="info"></div>
+  <script>
+    var bands = document.getElementById('bands');
+    for (var y = 0; y < 200; y += 10) {
+      var b = document.createElement('div');
+      b.className = 'band';
+      b.style.top = y + 'px';
+      b.style.background = (y / 10) % 2 ? '#c0392b' : '#2980b9';
+      b.textContent = y;
+      bands.appendChild(b);
+    }
+    var safe = document.getElementById('safe');
+    document.getElementById('info').innerHTML = [
+      'green line = safe-area top: ' + safe.offsetHeight + 'px',
+      'window: ' + innerWidth + ' × ' + innerHeight,
+      'screen: ' + screen.width + ' × ' + screen.height,
+      'home screen app: ' + (navigator.standalone ? 'yes' : 'no'),
+      'scale: ' + devicePixelRatio
+    ].join('<br>');
+  </script>
+</body>
+</html>
