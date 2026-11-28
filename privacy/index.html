@@ -26,15 +26,15 @@
 
     <main class="text">
       <h1>Privacy</h1>
-      <p>Tab &amp; Tick is a to-do list that works with Google Tasks, as a website and as a Chrome extension, made by STARTBOOK LTD, which is responsible for the data described here (the &ldquo;data controller&rdquo;). <strong>Your Google Tasks go straight between your browser and Google: we never receive or store them.</strong> Only lists you choose to share with other people are kept on our server, so that everyone in them sees changes at once.</p>
+      <p>Tab &amp; Tick is a to-do list that works with Google Tasks, as a website and as a Chrome extension, made by STARTBOOK LTD, which is responsible for the data described here (the &ldquo;data controller&rdquo;). <strong>Your Google Tasks go straight between your browser and Google: we never receive or store them.</strong> The only exception is lists you choose to share with other people: our server keeps a record of each, and keeps everyone&rsquo;s copy of it in their Google Tasks up to date.</p>
 
       <h2>What it uses</h2>
       <p>When you log in, you allow Tab &amp; Tick to see and change your Google Tasks: your lists and their tasks, including titles, notes, due dates and whether they&rsquo;re done. It uses these only to show your lists and make the changes you ask for.</p>
       <p>It also asks for your basic Google profile: your name, email address and picture. These are only shown to you, in the top corner, so you can see which account you&rsquo;re logged in with. It doesn&rsquo;t ask for your contacts or calendar.</p>
-      <p><strong>Shared lists.</strong> Google Tasks can&rsquo;t share lists, so a list you share is kept on Tab &amp; Tick&rsquo;s server instead (see below). The people you add, by their Google account&rsquo;s email, can see and change it, and see each other&rsquo;s names, email addresses and pictures. Nothing is emailed to them by us: you send them the link.</p>
+      <p><strong>Shared lists.</strong> Google Tasks can&rsquo;t share a list with another account, so each person in a shared list has it as a list in their own Google Tasks, and Tab &amp; Tick&rsquo;s server keeps them matched (see below). The people you add, by their Google account&rsquo;s email, can see and change it, and see each other&rsquo;s names, email addresses and pictures. Nothing is emailed to them by us: you send them the link.</p>
 
       <h2>Where it goes</h2>
-      <p>Your Google Tasks and profile go directly between your browser and Google, and your picture is loaded from Google. Shared lists go between your browser and our server. None of it is sold, used for advertising, or used to train AI, and no one reads it.</p>
+      <p>Your Google Tasks and profile go directly between your browser and Google, and your picture is loaded from Google. Shared lists also go between our server and Google, to keep everyone&rsquo;s copy matched, and between your browser and our server. None of it is sold, used for advertising, or used to train AI, and no one reads it.</p>
 
       <h2>What our server keeps</h2>
       <p><strong>To keep you logged in.</strong> On the website, Google&rsquo;s sign-in lasts an hour. So that you stay logged in, Tab &amp; Tick&rsquo;s server keeps, for each Google account you log in with:</p>
@@ -42,14 +42,14 @@
         <li>your Google account&rsquo;s ID, email address, name and picture link, as your Tab &amp; Tick account;</li>
         <li>a sign-in token from Google, encrypted, which lets the server get you a new hour-long Google key when the last runs out. It can only be used for what you agreed to when logging in: your tasks, and your name, email and picture (and, for anyone who used shared lists before December 2026, when they were kept in Google Drive, the Drive files Tab &amp; Tick made).</li>
       </ul>
-      <p>The server never uses the token to read your tasks or files: it only hands the new key to your browser. We use this information only to keep you logged in, and for nothing else.</p>
-      <p><strong>Shared lists.</strong> For each list you share: its name, its tasks (titles, notes, due dates, whether they&rsquo;re done, and who last changed each one), and the email address of each person in it. Only the people in a list can see it. Deleting a list deletes it and its tasks from the server; a task you delete is kept for 30 days, so it can be undone, then deleted. Leaving a list, or being removed from it, takes away your access.</p>
-      <p>All of it is kept by Supabase, on servers in London, on our behalf. Logging out deletes the token, and a token unused for six months is deleted automatically (Google stops honouring it then anyway). The Chrome extension doesn&rsquo;t use this: Chrome keeps it logged in.</p>
+      <p>The server uses the token for two things only: to hand your browser a new key, and, if you&rsquo;re in a shared list, to keep your Google list for it matched with everyone else&rsquo;s. For that it reads and changes your shared lists in Google Tasks, and no other lists: Google&rsquo;s permission covers all your tasks, but the server only ever opens the shared lists it knows by their ID. We use this information for nothing else.</p>
+      <p><strong>Shared lists.</strong> For each shared list: its name, its tasks (titles, notes, due dates, whether they&rsquo;re done, their order, and who last changed each one), the email address of each person in it, and the ID of each person&rsquo;s Google list for it, with the ID of each task in it. Only the people in a list can see it. Deleting a list deletes it and its tasks from the server, and from everyone&rsquo;s Google Tasks; a task you delete is kept on the server for 30 days, so it can be undone, then deleted. Leaving a list, or being removed from it, takes away your access and deletes your Google list for it. If you delete your Google list for it yourself, the server stops updating it.</p>
+      <p>All of it is kept by Supabase, on servers in London, on our behalf. Logging out deletes the token, unless you&rsquo;re in a shared list, which the server goes on keeping up to date in your Google Tasks; removing the account from Tab &amp; Tick (<em>Forget</em>), or leaving your shared lists and logging out, deletes it. A token unused for six months is deleted automatically (Google stops honouring it then anyway). The Chrome extension uses the token only for shared lists, once you allow it: Chrome keeps it logged in.</p>
 
       <h2>What&rsquo;s kept in your browser</h2>
       <ul class="plain">
         <li>A temporary key from Google, for each account you&rsquo;ve added, which lasts up to an hour, and your session with Tab &amp; Tick&rsquo;s server, so that closing the tab doesn&rsquo;t log you out and shared lists can be opened. Logging out forgets them. In the extension, Chrome looks after its key.</li>
-        <li>Which lists you&rsquo;ve hidden, and whether you logged out.</li>
+        <li>Which lists you&rsquo;ve hidden, which are shared, and whether you logged out.</li>
         <li>If you add more than one Google account on the website: each one&rsquo;s name, email address and picture link, to switch between them. Logging out of an account removes it.</li>
       </ul>
       <p>Your tasks aren&rsquo;t saved in your browser. There are no analytics, adverts or tracking cookies of ours.</p>
@@ -58,7 +58,7 @@
       <p>The website is hosted by GitHub Pages and uses Google&rsquo;s sign-in, so they may record visits as their own policies describe: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> and <a href="https://policies.google.com/privacy">Google</a>. Our server is run by <a href="https://supabase.com/privacy">Supabase</a>, which processes the information above only on our instructions.</p>
 
       <h2>Stopping access</h2>
-      <p>Logging out of an account deletes its sign-in token from our server. You can also remove Tab &amp; Tick&rsquo;s access at any time in your <a href="https://myaccount.google.com/connections">Google Account</a>. Your tasks stay in Google Tasks. Shared lists stay on our server until whoever made them deletes them.</p>
+      <p>Logging out of an account deletes its sign-in token from our server, unless you&rsquo;re in a shared list (see above). You can also remove Tab &amp; Tick&rsquo;s access at any time in your <a href="https://myaccount.google.com/connections">Google Account</a>, which stops the server reaching your Google Tasks at once. Your tasks stay in Google Tasks. Shared lists stay on our server until whoever made them deletes them.</p>
       <p>You can ask us for a copy of what our server keeps about you, or to delete it all, by writing to the address below. Under UK data protection law you can also complain to the <a href="https://ico.org.uk/make-a-complaint/">Information Commissioner&rsquo;s Office</a>.</p>
 
       <h2>Google&rsquo;s rules</h2>
@@ -66,7 +66,7 @@
 
       <h2>Questions</h2>
       <p>Write to <a href="mailto:tabandtick@googlegroups.com">tabandtick@googlegroups.com</a>. If this policy changes, the new version will be posted here.</p>
-      <p>Last updated 27 November 2026.</p>
+      <p>Last updated 28 November 2026.</p>
     </main>
 
     <footer><p>Not made or endorsed by Google. Google Tasks is a trademark of Google LLC.</p></footer>
